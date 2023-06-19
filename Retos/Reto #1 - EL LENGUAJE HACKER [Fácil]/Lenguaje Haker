@@ -1,0 +1,29 @@
+public class LenguajeHacker {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Introduce un texto");
+         String texto = teclado.nextLine();
+         char letra = '0';
+         String resultado = "";
+
+         String[] abc = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0"};
+         String[] leet = {"4","I3","[",")","3","|=","&","#","1",",_|",">|","1","/\\/\\","^/","0","|*","(_,)","I2","5","7","(_)","\\/","\\/\\/","><","j","2","L","R","E","A","S","b","T","B","g","o"};
+
+        for (int i = 0; i < texto.length(); i++){
+            letra = texto.charAt(i);
+
+            for (int j = 0; j < leet.length; j++){
+                if (letra == 32) {
+                    resultado += String.valueOf(letra);
+                    break;
+                } else if (String.valueOf(letra).toLowerCase().equals(abc[j].toLowerCase())) {
+                    resultado += leet[j];
+                    break;
+                }
+            }
+        }
+        System.out.println(resultado);
+
+
+    }
+}
